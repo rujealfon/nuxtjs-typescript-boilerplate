@@ -64,7 +64,7 @@ export default {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
-          test: /\.(js|vue)$/,
+          test: /\.(ts|js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/,
           options: {
@@ -73,15 +73,15 @@ export default {
         })
       }
     }
-  },
+  }
 
   /**
    * Runtime lint
    * https://typescript.nuxtjs.org/guide/lint.html#runtime-lint
    */
-  typescript: {
-    typeCheck: {
-      eslint: true
-    }
-  }
+  // typescript: {
+  //   typeCheck: {
+  //     eslint: true
+  //   }
+  // }
 }

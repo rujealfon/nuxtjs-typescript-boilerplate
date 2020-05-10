@@ -1,7 +1,7 @@
 <template>
   <div class="container">
+    {{ categoryList }}
     <div>
-      <logo />
       <h1 class="title">
         nuxtjs-typescript-biolerplate
       </h1>
@@ -25,14 +25,26 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
+import { Component, Vue } from 'nuxt-property-decorator'
 
-export default Vue.extend({
-  components: {
-    Logo
-  }
-})
+@Component
+export default class extends Vue {
+  title: string = 'Product Categories'
+  hello: Array<object> = [{}]
+
+  categoryList: Array<object> = [
+    {
+      name: 'Phones',
+      link: '/phones',
+      image: 'iphone-11.png'
+    },
+    {
+      name: 'Laptops',
+      link: '/laptops',
+      image: 'macbook.png'
+    }
+  ]
+}
 </script>
 
 <style>
